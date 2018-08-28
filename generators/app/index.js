@@ -49,6 +49,12 @@ module.exports = class extends Generator {
         type: 'confirm',
         message: 'would you like to have Appveyor included in the project?',
         default: false
+      },
+      {
+        name: 'useDocker',
+        type: 'confirm',
+        message: 'would you like to have Docker included in the project?',
+        default: false
       }
     ]
 
@@ -92,6 +98,16 @@ module.exports = class extends Generator {
       this.fs.copy(
         this.templatePath('appveyor.yml'),
         this.destinationPath(`${createDirName}/appveyor.yml`)
+      )
+    }
+    if (this.props.useDocker) {
+      this.fs.copy(
+        this.templatePath('Dockerfile'),
+        this.destinationPath(`${createDirName}/Dockerfile`)
+      )
+      this.fs.copy(
+        this.templatePath('dockerignore'),
+        this.destinationPath(`${createDirName}/.dockerignore`)
       )
     }
   }
