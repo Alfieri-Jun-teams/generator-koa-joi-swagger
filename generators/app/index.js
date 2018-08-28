@@ -55,6 +55,10 @@ module.exports = class extends Generator {
       this.templatePath('./koa_joi_swagger'),
       this.destinationPath(createDirName)
     )
+    this.fs.copy(
+      this.templatePath('gitignore'),
+      this.destinationPath(`${createDirName}/.gitignore`)
+    )
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath(`${createDirName}/package.json`),
