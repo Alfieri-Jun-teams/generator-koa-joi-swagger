@@ -1,21 +1,42 @@
 'use strict'
 const Generator = require('yeoman-generator')
 const chalk = require('chalk')
-const yosay = require('yosay')
+const yosay = require('../../yosay')
 
 module.exports = class extends Generator {
   prompting () {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the tremendous ${chalk.red('generator-koa-joi-swagger')} generator!`)
+      yosay(`${chalk.red('generator-koa-joi-swagger')}!!!`)
     )
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'input',
+        name: 'serverName',
+        message: 'Enter project name: ',
+        default: 'koa_joi_swagger'
+      },
+      {
+        type: 'input',
+        name: 'serverVersion',
+        message: 'Enter project version: ',
+        default: '1.0.0'
+      },
+      {
+        type: 'input',
+        name: 'serverDescription',
+        message: 'Enter project description: '
+      },
+      {
+        type: 'input',
+        name: 'author',
+        message: 'Author: '
+      },
+      {
+        type: 'input',
+        name: 'authorEmail',
+        message: 'Author Email: '
       }
     ]
 
@@ -26,13 +47,28 @@ module.exports = class extends Generator {
   }
 
   writing () {
+    let createDirName = 'koa_joi_swagger'
+    if (this.props.serverName) {
+      createDirName = this.props.serverName
+    }
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('./koa_joi_swagger'),
+      this.destinationPath(createDirName)
+    )
+    this.fs.copyTpl(
+      this.templatePath('package.json'),
+      this.destinationPath(`${createDirName}/package.json`),
+      {
+        serverName: this.props.serverName,
+        serverDescription: this.props.serverDescription,
+        serverVersion: this.props.serverVersion,
+        author: this.props.author,
+        authorEmail: this.props.authorEmail
+      }
     )
   }
 
-  install () {
-    this.installDependencies()
-  }
+  // install () {
+  //   this.installDependencies()
+  // }
 }
