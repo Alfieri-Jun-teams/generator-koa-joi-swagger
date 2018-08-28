@@ -43,6 +43,12 @@ module.exports = class extends Generator {
         type: 'confirm',
         message: 'would you like to have Travis included in the project?',
         default: false
+      },
+      {
+        name: 'useAppveyor',
+        type: 'confirm',
+        message: 'would you like to have Appveyor included in the project?',
+        default: false
       }
     ]
 
@@ -80,6 +86,12 @@ module.exports = class extends Generator {
       this.fs.copy(
         this.templatePath('travis.yml'),
         this.destinationPath(`${createDirName}/.travis.yml`)
+      )
+    }
+    if (this.props.useAppveyor) {
+      this.fs.copy(
+        this.templatePath('appveyor.yml'),
+        this.destinationPath(`${createDirName}/appveyor.yml`)
       )
     }
   }
