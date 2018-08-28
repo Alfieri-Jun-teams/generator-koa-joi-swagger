@@ -30,7 +30,7 @@ MIT © [AlfieriChou](https://github.com/AlfieriChou)
 
 [npm-image]: https://badge.fury.io/js/generator-koa-joi-swagger.svg
 [npm-url]: https://npmjs.org/package/generator-koa-joi-swagger
-[travis-image]: https://travis-ci.org/AlfieriChou/generator-koa-joi-swagger.svg?branch=master
-[travis-url]: https://travis-ci.org/AlfieriChou/generator-koa-joi-swagger
-[daviddm-image]: https://david-dm.org/AlfieriChou/generator-koa-joi-swagger.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/AlfieriChou/generator-koa-joi-swagger
+[travis-image]: https://travis-ci.org/Alfieri-Jun-teams/generator-koa-joi-swagger.svg?branch=master
+[travis-url]: https://travis-ci.org/Alfieri-Jun-teams/generator-koa-joi-swagger
+[daviddm-image]: https://david-dm.org/Alfieri-Jun-teams/generator-koa-joi-swagger.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Alfieri-Jun-teams/generator-koa-joi-swagger

@@ -37,6 +37,12 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'authorEmail',
         message: 'Author Email: '
+      },
+      {
+        name: 'useTravis',
+        type: 'confirm',
+        message: 'would you like to have Travis included in the project?',
+        default: false
       }
     ]
 
@@ -70,6 +76,12 @@ module.exports = class extends Generator {
         authorEmail: this.props.authorEmail
       }
     )
+    if (this.props.useTravis) {
+      this.fs.copy(
+        this.templatePath('travis.yml'),
+        this.destinationPath(`${createDirName}/.travis.yml`)
+      )
+    }
   }
 
   // install () {
