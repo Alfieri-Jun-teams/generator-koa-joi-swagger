@@ -1,13 +1,16 @@
 'use strict'
 const Generator = require('yeoman-generator')
-const chalk = require('chalk')
-const yosay = require('../../yosay')
+const cowsay = require('cowsay')
 
 module.exports = class extends Generator {
   prompting () {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`${chalk.red('generator-koa-joi-swagger')}!!!`)
+      cowsay.say({
+        text: 'Generater koa joi swagger!!',
+        e: 'oo',
+        T: 'L!'
+      })
     )
 
     const prompts = [

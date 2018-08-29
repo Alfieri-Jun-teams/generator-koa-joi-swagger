@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-joi-swagger",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "yeoman generator koa joi swagger ",
   "homepage": "https://github.com/Alfieri-Jun-teams/generator-koa-joi-swagger",
   "author": {
@@ -29,9 +29,8 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
-    "chalk": "^2.1.0",
-    "yosay": "^2.0.1"
+    "cowsay": "^1.3.1",
+    "yeoman-generator": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node"
