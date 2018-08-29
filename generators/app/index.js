@@ -45,6 +45,12 @@ module.exports = class extends Generator {
         default: true
       },
       {
+        name: 'addReadme',
+        type: 'confirm',
+        message: 'would you like to have README.md included in the project?',
+        default: true
+      },
+      {
         name: 'useTravis',
         type: 'confirm',
         message: 'would you like to have Travis included in the project?',
@@ -98,6 +104,12 @@ module.exports = class extends Generator {
       this.fs.copy(
         this.templatePath('test/*'),
         this.destinationPath(`${createDirName}/test/`)
+      )
+    }
+    if (this.props.addTest) {
+      this.fs.copy(
+        this.templatePath('README.md'),
+        this.destinationPath(`${createDirName}/README.md`)
       )
     }
     if (this.props.useTravis) {
