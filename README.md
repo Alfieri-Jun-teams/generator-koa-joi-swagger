@@ -16,6 +16,51 @@ Then generate your new project:
 yo koa-joi-swagger
 ```
 
+Project name: (you can write project name to this project, default joi_swagger)
+
+```bash
+Enter project name:  (joi_swagger)
+```
+
+Project version: (you can write project version to this project, default: 1.0.0)
+
+```bash
+Enter project version:  (1.0.0)
+```
+
+Description, Author & Author Email:
+
+```bash
+Enter project description:
+Author:
+Author Email:
+```
+
+Trivis CI: (if you want to use Travis CI in this project, you should enter Y. default: No)
+
+```bash
+would you like to have Travis included in the project? (y/N)
+```
+
+Dockerfile: (if you want to use Dockerfile in this project, you should enter Y. default: No)
+
+```bash
+would you like to have Docker included in the project? (y/N)
+```
+
+Appveyor CI: (if you want to use Appveyor CI in this project, you should enter Y. default: No)
+
+```bash
+would you like to have Appveyor included in the project? (y/N)
+```
+
+README.md & test:
+
+```bash
+would you like to have README.md included in the project? (Y/n)
+would you like to have test module included in the project? (Y/n)
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
