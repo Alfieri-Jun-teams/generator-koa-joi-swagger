@@ -127,12 +127,21 @@ const generateSwagger = (modelPath = './models') => {
   let swagger = {}
   swagger.openapi = '3.0.0'
   swagger.info = {
-    'title': 'API document',
-    'version': 'v3'
+    'title': 'Demo API document',
+    'version': 'v3',
+    'description': 'Using swagger3.0 & joi to generate swagger.json',
+    'contact': {
+      'name': 'AlfieriChou',
+      'email': 'alfierichou@gmail.com',
+      'url': 'https://alfierichou.com'
+    },
+    'license': {
+      'name': 'MIT',
+      'url': 'https://github.com/Alfieri-Jun-teams/koa_joi_swagger/blob/master/LICENSE'
+    }
   }
   swagger.paths = mergeMethod
   swagger.components = components
-  // swagger.parameters = parameters
   return swagger
 }
 
