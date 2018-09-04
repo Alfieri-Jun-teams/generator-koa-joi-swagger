@@ -7,3 +7,5 @@ ADD . /home/app/
 RUN cd /home/app/ && npm install
 
 EXPOSE 4000
+
+CMD npm start
