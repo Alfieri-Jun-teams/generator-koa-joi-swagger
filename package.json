@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-joi-swagger",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "yeoman generator koa joi swagger ",
   "homepage": "https://github.com/Alfieri-Jun-teams/generator-koa-joi-swagger",
   "author": {

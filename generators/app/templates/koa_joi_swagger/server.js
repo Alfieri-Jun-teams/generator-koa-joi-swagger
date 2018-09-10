@@ -6,7 +6,7 @@ const Koa = require('koa')
 const logger = require('koa-logger')
 const koabody = require('koa-body')
 const views = require('koa-views')
-const index = require('./routes/index')
+const index = require('./app/routes/index')
 
 const app = new Koa()
 
