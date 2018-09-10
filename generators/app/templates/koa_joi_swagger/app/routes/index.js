@@ -1,15 +1,14 @@
 const KoaRouter = require('koa-router')
-const user = require('../controller/user')
-const swagger = require('../controller/swagger')
+const controller = require('../controller')
 const api = KoaRouter()
 
-api.get('/users', user.index)
-api.post('/users', user.create)
-api.get('/users/:id', user.show)
-api.put('/users/:id', user.update)
-api.delete('/users/:id', user.destroy)
+api.get('/users', controller.user.index)
+api.post('/users', controller.user.create)
+api.get('/users/:id', controller.user.show)
+api.put('/users/:id', controller.user.update)
+api.delete('/users/:id', controller.user.destroy)
 
-api.get('/swagger.json', swagger.doc)
-api.get('/apidoc', swagger.index)
+api.get('/swagger.json', controller.swagger.doc)
+api.get('/apidoc', controller.swagger.index)
 
 module.exports = api
