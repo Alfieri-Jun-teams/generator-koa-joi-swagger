@@ -1,8 +1,10 @@
-### Sep 10, 2018
+### Oct 17, 2018
 
   * releasev1.1.2
     * migration
     * config
+
+### Sep 10, 2018
   
   * releasev1.1.1 
     * require controller dir 
