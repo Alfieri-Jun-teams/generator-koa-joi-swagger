@@ -7,6 +7,8 @@ const logger = require('koa-logger')
 const koabody = require('koa-body')
 const views = require('koa-views')
 const index = require('./app/routes/index')
+const path = require('path')
+const config = require('./config')
 
 const app = new Koa()
 
@@ -24,14 +26,14 @@ app.use(async (ctx, next) => {
 
 app
   .use(logger())
-  .use(views(__dirname + '/views', {map: {html: 'nunjucks'}}))
+  .use(views(path.join('./views'), {map: {html: 'nunjucks'}}))
   .use(koabody({}))
   .use(index.middleware())
   .use(bodyParser())
 
 if (!module.parent) {
-  app.listen(4000)
-  console.log(`✅  The server is running at http://localhost:4000`)
+  app.listen(config.port)
+  console.log(`✅  The server is running at http://localhost:${config.port}`)
 }
 
 module.exports = app

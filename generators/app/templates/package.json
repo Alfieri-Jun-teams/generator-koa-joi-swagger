@@ -4,10 +4,18 @@
   "description": "<%= serverDescription %>",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
     "dev": "NODE_ENV=development nodemon server.js",
+    "release": "NODE_ENV=release nodemon server.js",
+    "db:migrate": "node ./migration/migration.js",
+    "db:migrate:prod": "node ./migration/migration.js prod",
+    "db:migrate:release": "node ./migration/migration.js release",
+    "db:drop": "node ./migration/drop.js",
+    "db:drop:prod": "node ./migration/drop.js prod",
+    "db:drop:release": "node ./migration/drop.js release",
     "lint": "standard --fix",
-    "test": "nyc mocha --exit"
+    "test": "nyc mocha --exit",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [
     "joi",
@@ -17,9 +25,12 @@
   "author": "<%= author %> <<%= authorEmail %>>",
   "license": "MIT",
   "dependencies": {
+    "app-root-path": "^2.1.0",
+    "dir_filenames": "^1.0.6",
     "joi": "^13.6.0",
     "joi-to-json-schema": "^3.3.0",
     "jsonschema": "^1.2.4",
+    "knex": "^0.15.2",
     "koa": "^2.5.2",
     "koa-body": "^4.0.4",
     "koa-bodyparser": "^4.2.1",
@@ -27,16 +38,16 @@
     "koa-router": "^7.4.0",
     "koa-views": "^6.1.4",
     "lodash": "^4.17.10",
-    "nunjucks": "^3.1.3",
-    "require-directory": "^2.1.1"
+    "mysql": "^2.16.0",
+    "nunjucks": "^3.1.3"
   },
   "devDependencies": {
     "codecov": "^3.0.4",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.3",
+    "nyc": "^13.0.1",
     "should": "^13.2.3",
     "standard": "^11.0.1",
-    "supertest": "^3.1.0",
-    "nyc": "^12.0.2"
+    "supertest": "^3.1.0"
   }
 }
